@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AgreementClient.View"
         mc:Ignorable="d"
-        Title="WindowStatusAgreement" Height="611" Width="556">
-    <Grid Margin="0,89,157,0">
-        
-    </Grid>
+        Title="Статус договора" Height="300" Width="200">
+    <StackPanel Background="#FFD8D8D8">
+        <ListView x:Name="lvStatusAgreement" Background="#FFD3CDCD">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="50" 
+                                        DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Статус договора"  Width="120" 
+                                        DisplayMemberBinding="{Binding Status}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </StackPanel>
 </Window>

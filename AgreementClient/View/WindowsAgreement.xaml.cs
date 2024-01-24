@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AgreementClient.Helper;
+using AgreementClient.Model;
+using AgreementClient.ViewModel;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace AgreementClient.View
 {
@@ -22,6 +14,61 @@ namespace AgreementClient.View
         public WindowsAgreement()
         {
             InitializeComponent();
+            AgreementViewModel vmAgreement = new();
+
+            PersonViewModel vmPerson = new();
+            StatusAgreementViewModel vmStatusAgreement = new();
+            TypeAgreementViewModel vmTypeAgreement = new();
+
+            List<Person> persons = [];
+            List<StatusAgreement> statusAgreements = [];
+            List<TypeAgreement> typeAgreements = [];
+
+            foreach (Person p in vmPerson.Persons)
+            {
+                persons.Add(p);
+            }
+
+            foreach (StatusAgreement sa in vmStatusAgreement.StatusAgreements)
+            {
+                statusAgreements.Add(sa);
+            }
+
+            foreach (TypeAgreement ta in vmTypeAgreement.TypeAgreements)
+            {
+                typeAgreements.Add(ta);
+            }
+
+            ObservableCollection<AgreementDPO> agreements = [];
+
+            FindPerson finderP;
+            FindStatusAgreement finderSA;
+            FindTypeAgreement finderTA;
+
+            foreach (var a in vmAgreement.Agreements)
+            {
+                finderP = new FindPerson(a.PersonID);
+                finderSA = new FindStatusAgreement(a.TypeID);
+                finderTA = new FindTypeAgreement(a.StatusID);
+
+                Person per = persons.Find(new Predicate<Person>(finderP.PersonPredicate));
+                StatusAgreement sa = statusAgreements.Find(new Predicate<StatusAgreement>(finderSA.StatusAgreementPredicate));
+                TypeAgreement ta = typeAgreements.Find(new Predicate<TypeAgreement>(finderTA.TypeAgreementPredicate));
+
+                agreements.Add(new AgreementDPO
+                {
+
+                    Id = a.Id,
+                    Person = per.Inn,
+                    Type = ta.Type,
+                    Status = sa.Status,
+                    Number = a.Number,
+                    DataOpen = a.DataOpen,
+                    DataClose = a.DataClose
+                });
+            }
+
+            lvAgreement.ItemsSource = agreements;
         }
     }
 }

@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AgreementClient.View"
         mc:Ignorable="d"
-        Title="WindowPerson" Height="450" Width="813">
-    <Grid Margin="0,0,89,0">
-        
-    </Grid>
+        Title="Клиенты" Height="300" Width="600">
+    <StackPanel Background="#FFD8D8D8">
+        <ListView x:Name="lvPerson" Background="#FFD3CDCD">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="50" 
+                                      DisplayMemberBinding="{Binding Id}" />
+                        <GridViewColumn Header="Шифр"  Width="120"
+                                        DisplayMemberBinding="{Binding Shifer}"/>
+                        <GridViewColumn Header="ИНН" Width="120"
+                                        DisplayMemberBinding="{Binding Inn}"/>
+                        <GridViewColumn Header="Тип клиента"  Width="150"
+                                        DisplayMemberBinding="{Binding Type}"/>
+                        <GridViewColumn Header="Дата регистрации"  Width="120"
+                                        DisplayMemberBinding="{Binding Data}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </StackPanel>
 </Window>

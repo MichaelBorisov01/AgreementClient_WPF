@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AgreementClient.View"
         mc:Ignorable="d"
-        Title="WindowsAgreement" Height="450" Width="523">
-    <Grid HorizontalAlignment="Left" Width="588">
-        
-    </Grid>
+        Title="Договоры" Height="350" Width="500">
+    <StackPanel Background="#FFD8D8D8">
+        <ListView x:Name="lvAgreement" Background="#FFD3CDCD">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="50" 
+                                        DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Клиент"  Width="80" 
+                                        DisplayMemberBinding="{Binding Person}"/>
+                        <GridViewColumn Header="Тип" Width="80" 
+                                        DisplayMemberBinding="{Binding Type}"/>
+                        <GridViewColumn Header="Статус"  Width="80"
+                                        DisplayMemberBinding="{Binding Status}"/>
+                        <GridViewColumn Header="Дата заключения"  Width="100" 
+                                        DisplayMemberBinding="{Binding DataOpen}"/>
+                        <GridViewColumn Header="Дата закрытия"  Width="100" 
+                                        DisplayMemberBinding="{Binding DataClose}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </StackPanel>
 </Window>
