@@ -1,25 +1,23 @@
-﻿using System;
-
-
-namespace AgreementClient.Model
+﻿namespace AgreementClient.Model
 {
-    enum AgreementType
-    {
-        Dealer,
-        Brokerage,
-        Management
-    }
 
     internal class TypeAgreement
     {
         public int Id { get; set; }
-        public AgreementType Type { get; set; }
+        public String Type { get; set; }
          
         public TypeAgreement() { }
-        public TypeAgreement(int id, AgreementType type)
+        public TypeAgreement(int id, String type)
         {
             Id = id;
             Type = type;
         }
+
+        public TypeAgreement ShallowCopy()
+        {
+            return (TypeAgreement)this.MemberwiseClone();
+        }
+
+
     }
 }

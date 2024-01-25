@@ -2,19 +2,14 @@
 
 namespace AgreementClient.Model
 {
-    enum StatusAgreementType
-    {
-        Enable, 
-        Disable
-    }
-
+    
     internal class StatusAgreement
     {
         public int Id { get; set; }
-        public StatusAgreementType Status { get; set; }
+        public String Status { get; set; }
         
         public StatusAgreement() { }
-        public StatusAgreement(int id, StatusAgreementType status)
+        public StatusAgreement(int id, String status)
         {
             Id = id;
             Status = status;

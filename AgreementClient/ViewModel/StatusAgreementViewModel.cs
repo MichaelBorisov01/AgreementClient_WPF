@@ -13,26 +13,26 @@ namespace AgreementClient.ViewModel
             new StatusAgreement
             {
                 Id = 1,
-                Status = StatusAgreementType.Enable
+                Status = "Enable"
 
             });
             StatusAgreements.Add(
             new StatusAgreement
             {
                 Id = 2,
-                Status = StatusAgreementType.Enable
+                Status = "Enable"
             });
             StatusAgreements.Add(
             new StatusAgreement
             {
                 Id = 3,
-                Status = StatusAgreementType.Disable
+                Status = "Disable"
             });
             StatusAgreements.Add(
             new StatusAgreement
             {
                 Id = 4,
-                Status = StatusAgreementType.Enable
+                Status = "Enable"
             });
         }
     }

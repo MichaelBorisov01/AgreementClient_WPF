@@ -15,7 +15,7 @@ namespace AgreementClient.ViewModel
             {
                 Id = 1,
                 Inn = "123456789789",
-                Type = PersonType.Individual,
+                Type = "Individual",
                 Shifer = "sdfg4845-sdf4-sdfsd8",
                 Data = new DateTime(2001, 03, 20)
 
@@ -25,7 +25,7 @@ namespace AgreementClient.ViewModel
             {
                 Id = 2,
                 Inn = "321654987852",
-                Type = PersonType.Individual,
+                Type = "Individual",
                 Shifer = "sdfg4845-sdf4-sdfsd8",
                 Data = new DateTime(2002, 03, 20)
             });
@@ -34,7 +34,7 @@ namespace AgreementClient.ViewModel
             {
                 Id = 3,
                 Inn = "456987123357",
-                Type = PersonType.LegalEntity,
+                Type = "LegalEntity",
                 Shifer = "sdfg4845-sdf4-sdfsd8",
                 Data = new DateTime(2003, 03, 20)
             });
@@ -43,7 +43,7 @@ namespace AgreementClient.ViewModel
             {
                 Id = 4,
                 Inn = "456951789528",
-                Type = PersonType.Individual,
+                Type = "Individual",
                 Shifer = "sdfg4845-sdf4-sdfsd8",
                 Data = new DateTime(2004, 03, 20)
             });

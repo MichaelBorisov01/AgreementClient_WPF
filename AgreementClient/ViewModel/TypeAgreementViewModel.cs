@@ -2,14 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AgreementClient.ViewModel
 {
     internal class TypeAgreementViewModel
     {
+
         public ObservableCollection<TypeAgreement> TypeAgreements { get; set; } = [];
         public TypeAgreementViewModel()
         {
@@ -17,27 +15,40 @@ namespace AgreementClient.ViewModel
             new TypeAgreement
             {
                 Id = 1,
-                Type = AgreementType.Dealer
+                Type = "Dealer"
 
             });
             TypeAgreements.Add(
             new TypeAgreement
             {
                 Id = 2,
-                Type = AgreementType.Brokerage
+                Type =  "Brokerage"
             });
             TypeAgreements.Add(
             new TypeAgreement
             {
                 Id = 3,
-                Type = AgreementType.Brokerage
+                Type = "Brokerage"
             });
             TypeAgreements.Add(
             new TypeAgreement
             {
                 Id = 4,
-                Type = AgreementType.Management
+                Type = "Management"
             });
+        }
+
+        public int MaxId()
+        {
+            int max = 0;
+            foreach (var ta in this.TypeAgreements)
+            {
+                if (max < ta.Id)
+                {
+                    max = ta.Id;
+                };
+            }
+            return max;
         }
     }
 }

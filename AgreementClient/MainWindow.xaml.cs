@@ -8,6 +8,9 @@ namespace AgreementClient
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public static int IdTypeAgreement { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
