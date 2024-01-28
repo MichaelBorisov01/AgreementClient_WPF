@@ -10,6 +10,7 @@ namespace AgreementClient
     {
 
         public static int IdTypeAgreement { get; set; }
+        public static int IdAgreement { get; set; }
 
         public MainWindow()
         {

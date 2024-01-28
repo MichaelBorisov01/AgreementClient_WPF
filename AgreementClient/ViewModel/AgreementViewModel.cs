@@ -55,5 +55,18 @@ namespace AgreementClient.ViewModel
                 DataClose = new DateTime(1986, 03, 20)
             });
         }
+
+        public int MaxId()
+        {
+            int max = 0;
+            foreach (var ag in this.Agreements)
+            {
+                if (max < ag.Id)
+                {
+                    max = ag.Id;
+                };
+            }
+            return max;
+        }
     }
 }
